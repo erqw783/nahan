@@ -2,15 +2,17 @@
 
 **Nahan** (Persian for *Hidden/Concealed*) is a secure, lightweight, and customizable network gateway designed to run entirely on Cloudflare Workers. It acts as an obfuscated reverse proxy (VLESS / Trojan over WebSocket) configured via an intuitive, embedded web dashboard.
 
-By disguising its web interface as an "IoT Telemetry Hub," unauthorized visitors are seamlessly redirected to maintenance hosts (like ubuntu.com), ensuring your gateway remains completely hidden and protected from active probing.
+By disguising its web interface as an "IoT Telemetry Gateway," unauthorized requests or active network probes are seamlessly proxied to maintenance hosts (like ubuntu.com), ensuring your gateway remains hidden.
 
 ## 🚀 Features
 
-*   **Full Embedded Dashboard:** Change configurations, view QR codes, and copy secure links without touching code.
-*   **Dual Protocol Support:** Run in `Alpha mode` (VLESS) or `Beta mode` (Trojan).
-*   **Dynamic KV Storage:** Settings are saved to a Cloudflare KV namespace, surviving worker updates.
-*   **Stealth Mode:** Unauthorized network requests or standard browser visits are seamlessly proxied to dummy websites (`ubuntu.com`, `docker.com`).
-*   **Multi-Language UI:** Built-in English and Persian (Farsi) support with Dark/Light mode.
+*   **Fully Embedded Dashboard:** Update settings, scan QR codes, and generate client subscription links on the fly.
+*   **Dual Protocol Support:** Run in `Alpha mode` (VLESS) or `Beta mode` (Trojan) configuration profiles.
+*   **Dynamic KV Storage:** State configurations survive worker upgrades by saving to Cloudflare KV storage (`IOT_DB`).
+*   **Browser-Side Latency Diagnostics:** Verify connection routing speeds directly from your browser to targeted endpoints.
+*   **Configuration Backup & Restore:** Export and import gateway setting sets as `.json` configuration files locally.
+*   **Camouflage Redirection:** Seamlessly redirects unauthorized network scans to legitimate sites (`ubuntu.com`, `docker.com`).
+*   **Dual-Language UI:** Built-in English and Persian (Farsi) translation layouts with automatic dark/light mode toggle.
 
 ## 🛠️ Deployment Instructions
 
@@ -22,7 +24,7 @@ By disguising its web interface as an "IoT Telemetry Hub," unauthorized visitors
 ### 2. Deploy the Worker
 1. Go to **Workers & Pages** -> **Overview** -> **Create Application** -> **Create Worker**.
 2. Name your worker (e.g., `nahan-gateway`) and deploy it.
-3. Click **Edit code** and paste the provided `index.js` (or `_worker.js`) script.
+3. Click **Edit code** and paste the provided `index.js` script.
 4. Click **Deploy**.
 
 ### 3. Bind the KV Namespace
@@ -34,4 +36,4 @@ By disguising its web interface as an "IoT Telemetry Hub," unauthorized visitors
 
 ## ⚙️ Configuration
 
-Once deployed, access the dashboard to configure your node. See the [HELP.md](HELP.md) guide for a full walkthrough.
+Once deployed, access the dashboard to configure your gateway. See the [HELP.md](HELP.md) guide for a full walkthrough of properties.
