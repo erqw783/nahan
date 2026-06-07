@@ -2041,7 +2041,7 @@ function getDashboardUI(hasDB) {
                       const rVer = strip(remoteVer);
                       const cVer = strip("2.3.1");
                       
-                      if (rVer && rVer !== cVer) {
+                      if (rVer && rVer > cVer) {
                           showUpdateBanner(repo, rVer);
                       }
                   }
