@@ -404,7 +404,7 @@ function serveSubscriptionInfoPage(user, host, url, request) {
     let totalPercent = limitTotal ? Math.min(100, (totalReqs / limitTotal) * 100).toFixed(1) : 0;
     let dailyPercent = limitDaily ? Math.min(100, (dailyReqs / limitDaily) * 100).toFixed(1) : 0;
     
-    let expiryDateTxt = 'Never Expired';
+    let expiryDateTxt = 'z-vpn';
     let isExpired = false;
     if (user.expiryMs) {
         let exp = new Date(user.expiryMs);
@@ -1599,8 +1599,8 @@ function getSubscriptionStats(targetSub = null) {
     let totalGb = (totalReqs / 6000).toFixed(2);
     let limitTotalGb = limitTotalReq ? (limitTotalReq / 6000).toFixed(2) : 'Unlimited';
     
-    let expiryDateTxt = 'Never Expire';
-    let remDaysTxt = 'Never Expire';
+    let expiryDateTxt = 'z-vpn';
+    let remDaysTxt = 'z-npn';
     if (expiryMs) {
         let exp = new Date(expiryMs);
         expiryDateTxt = exp.toISOString().split('T')[0];
