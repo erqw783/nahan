@@ -404,7 +404,7 @@ function serveSubscriptionInfoPage(user, host, url, request) {
     let totalPercent = limitTotal ? Math.min(100, (totalReqs / limitTotal) * 100).toFixed(1) : 0;
     let dailyPercent = limitDaily ? Math.min(100, (dailyReqs / limitDaily) * 100).toFixed(1) : 0;
     
-    let expiryDateTxt = 'Never Expired';
+    let expiryDateTxt = 'Never 2Expired';
     let isExpired = false;
     if (user.expiryMs) {
         let exp = new Date(user.expiryMs);
