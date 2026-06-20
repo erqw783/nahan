@@ -1,7 +1,7 @@
 import { connect } from "cloudflare:sockets";
 
 /* 
- * Project Nahan (نهان) - IoT Device Telemetry Gateway
+ * Project  (z-vpn) - IoT Device Telemetry Gateway
  * Handles real-time binary streams from remote sensor nodes.
  */
 
